@@ -577,7 +577,7 @@ select_player_map("Joel Matip")
 select_player_map("Luis Díaz")
 select_player_map("Jordan Henderson")
 select_player_map("Virgil van Dijk")
-select_player_map("Takumi Minamino")
+select_player_map("Mohammed Kudus")
 select_player_map("James Milner")
 
 select_player_map("Konstantinos Tsimikas")

@@ -99,8 +99,8 @@ library(here)
 })
 #devtools::install_github("ddsjoberg/bstfun")
 
-install.packages("corrr")
-library(corrr)
+# install.packages("corrr")
+# library(corrr)
 
 #install.packages("rJava")
 #install.packages("RSelenium")

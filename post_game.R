@@ -190,7 +190,13 @@ lfc_viz <- function(events){
           plot.subtitle = element_markdown(color = "floralwhite",family = "Consolas",size = 10,hjust = 0.5),
           strip.background = element_rect(fill="grey25"),plot.caption = element_markdown(color = "floralwhite",family = "Consolas",size = 10,hjust = 0.7),
           strip.text = element_text(face="bold", size=10,color = "floralwhite",family = "Consolas"))
-  ggsave("Charts/LFC/xg_map.png", width = 8*1.618, height = 6, dpi=300,type='cairo')
+  ggsave("Charts/LFC/xg_map.png", width = 8*1.618, height = 6, dpi=300,type='cairo') 
+  
+  xg_map <- image_read("Charts/LFC/xg_map.png")
+  
+  xg_map %>% 
+    image_trim() %>% 
+    image_write("Charts/LFC/xg_map_cropped.png")
   
   #add_logo_map("Charts/AFCON/xg_map.png",afcon_logo,"top right",logo_scale = 20) %>%
   #image_write("Charts/AFCON/xg_map.png")
@@ -1520,7 +1526,7 @@ lfc_viz <- function(events){
   
 }
 
-events <-game_carries_xT("https://www.whoscored.com/Matches/1640697/Live/England-Premier-League-2022-2023-Fulham-Brentford")%>%
+events <-game_carries_xT("https://www.whoscored.com/Matches/1640703/Live/England-Premier-League-2022-2023-West-Ham-Brighton")%>%
   filter(period !="PenaltyShootout") %>%
   mutate(across(c(playerName,situation,shotBodyType),.fns=~as.character(.)),
          is_goal_kick=ifelse(str_detect(as.character(qualifiers),"GoalKick"),T,F),
@@ -1571,9 +1577,10 @@ away_team <- events %>% filter(h_a=="a")%>%
   pull(team_abb)
 
 game_hashtag <- glue("#{home_team}{away_team}")
-  
 
-post_tweet(glue("{game_hashtag} Game Summary, xG timeline and xT timeline"),media = c("Charts/LFC/summary_table.png","Charts/LFC/xg_timeline.png","Charts/LFC/xt_timeline.png"),
+
+
+post_tweet(glue("{game_hashtag} Game Summary, shot map, xG timeline and xT timeline"),media = c("Charts/LFC/summary_table.png","Charts/LFC/xg_map_cropped.png","Charts/LFC/xg_timeline.png","Charts/LFC/xt_timeline.png"),
            token = token)
 my_timeline <- get_timeline(rtweet:::home_user())
 
