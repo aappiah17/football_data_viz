@@ -14,4 +14,4 @@ Repo for sharing post game visualizations on twitter. After some selected games 
 ![plot](./Charts/LFC/switch_map.png)
 ## Expected threat created by players
 ![plot](./Charts/LFC/xt_chart.png)
-More visualization available [here](https://www.google.com)
+More visualization available [here](https://github.com/aappiah17/football_data_viz/tree/main/Charts/LFC)
