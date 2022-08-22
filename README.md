@@ -1,5 +1,7 @@
 # football_data_viz
 Repo for sharing post game visualizations on twitter. After some selected games in the premier league, I post visualizations to highlight performances in the game. Some of those visualizations are show below 
+## xG shotmap
+![plot](./Charts/LFC/xg_map_cropped.png)
 ## xG timelines
 ![plot](./Charts/LFC/xg_timeline.png)
 ## Game summary statistics
