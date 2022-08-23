@@ -48,6 +48,7 @@ lfc_viz <- function(events){
   #xG 
   game_shots <- prep_shot_df(events)
   
+
   
   # Get home and away teams
   home_team <- events %>% filter(h_a=="h")%>%
@@ -79,6 +80,7 @@ lfc_viz <- function(events){
     summarize(goals = sum(is_goal == 'Goal')) %>%
     pull(goals)
   
+  # Make xG shot map
   xg_map_df <- game_xg %>% clean_names()%>%
     left_join(team_logos, by="team_name")%>%
     mutate(x_adj=ifelse(h_a=="h",100-x,x),
@@ -201,7 +203,7 @@ lfc_viz <- function(events){
   #add_logo_map("Charts/AFCON/xg_map.png",afcon_logo,"top right",logo_scale = 20) %>%
   #image_write("Charts/AFCON/xg_map.png")
   
-  #xg roll sum 
+# xG timeline - this was heavily borrowed from the ggshakeR package
   
   #xg roll sum 
   last_minute <- max(events$minute,na.rm = T)
