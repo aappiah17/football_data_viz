@@ -1,5 +1,5 @@
 # football_data_viz
-Repo for sharing post game visualizations on twitter. After some selected games in the premier league (mostly Liverpool FC games), I post visualizations to highlight team and player performances in the game. Some of those visualizations are show below 
+Repo for sharing post game visualizations on twitter. After some selected games in the premier league (mostly Liverpool FC games), I post visualizations to highlight team and player performances in the game. Some of those visualizations are show below. <br> 
 The python script for sraping data from [Whoscored](whoscored.com) comes from [Ali-Hasan-Khan](https://github.com/Ali-Hasan-Khan/Scrape-Whoscored-Event-Data)
 
 ## xG shotmap
